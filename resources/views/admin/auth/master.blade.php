@@ -1,3 +1,6 @@
+@php
+  $dir=LaravelLocalization::getCurrentLocale()=='ar' ? 'rtl':'';
+@endphp
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,32 +9,32 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Admin Dashboard - @yield('title')</title>
+    <title>{{__('keywords.dashboard')}} - @yield('title')</title>
     <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/simplebar.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/simplebar.css">
     <!-- Fonts CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Icons CSS -->
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/feather.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/feather.css">
     <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/daterangepicker.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/daterangepicker.css">
     <!-- App CSS -->
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/app-light.css" id="lightTheme">
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/app-dark.css" id="darkTheme" disabled>
   </head>
-  <body class="light ">
+  <body class="light {{$dir}}">
     @yield('content')
 
-    <script src="{{ asset('assetsAdmin') }}/js/jquery.min.js"></script>
-    <script src="{{ asset('assetsAdmin') }}/js/popper.min.js"></script>
-    <script src="{{ asset('assetsAdmin') }}/js/moment.min.js"></script>
-    <script src="{{ asset('assetsAdmin') }}/js/bootstrap.min.js"></script>
-    <script src="{{ asset('assetsAdmin') }}/js/simplebar.min.js"></script>
-    <script src='{{ asset('assetsAdmin') }}/js/daterangepicker.js'></script>
-    <script src='{{ asset('assetsAdmin') }}/js/jquery.stickOnScroll.js'></script>
-    <script src="{{ asset('assetsAdmin') }}/js/tinycolor-min.js"></script>
-    <script src="{{ asset('assetsAdmin') }}/js/config.js"></script>
-    <script src="{{ asset('assetsAdmin') }}/js/apps.js"></script>
+    <script src="{{ asset('assetsAdmin'.$dir) }}/js/jquery.min.js"></script>
+    <script src="{{ asset('assetsAdmin'.$dir) }}/js/popper.min.js"></script>
+    <script src="{{ asset('assetsAdmin'.$dir) }}/js/moment.min.js"></script>
+    <script src="{{ asset('assetsAdmin'.$dir) }}/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assetsAdmin'.$dir) }}/js/simplebar.min.js"></script>
+    <script src='{{ asset('assetsAdmin'.$dir) }}/js/daterangepicker.js'></script>
+    <script src='{{ asset('assetsAdmin'.$dir) }}/js/jquery.stickOnScroll.js'></script>
+    <script src="{{ asset('assetsAdmin'.$dir) }}/js/tinycolor-min.js"></script>
+    <script src="{{ asset('assetsAdmin'.$dir) }}/js/config.js"></script>
+    <script src="{{ asset('assetsAdmin'.$dir) }}/js/apps.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>

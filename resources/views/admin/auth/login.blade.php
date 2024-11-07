@@ -1,6 +1,6 @@
 @extends('admin.auth.master')
 
-@section('title','Login')
+@section('title',__('keywords.login'))
 
 @section('content')
 <div class="wrapper vh-100">
@@ -16,30 +16,30 @@
             </g>
           </svg>
         </a>
-        <h1 class="h6 mb-3">Sign in</h1>
+        <h1 class="h6 mb-3">{{__('keywords.sign_in')}}</h1>
         <x-auth-session-status class="mb-4 " :status="session('status')"/>
 
         <div class="form-group">
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="Email address" 
+          <label for="inputEmail" class="sr-only">{{__('keywords.email')}}</label>
+          <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="{{__('keywords.email')}}" 
            name="email" :value="old('email')" >
           <x-input-error :messages="$errors->get('email')" class="mt-2"/>
         </div>
 
         <div class="form-group">
-          <label for="inputPassword" class="sr-only">Password</label>
+          <label for="inputPassword" class="sr-only">{{__('keywords.password')}}</label>
           <input type="password" id="inputPassword" class="form-control form-control-lg"
-           placeholder="Password"  name='password'>
+           placeholder="{{__('keywords.password')}}"  name='password'>
            <x-input-error :messages="$errors->get('password')" class="mt-2"/>
         </div>
 
         <div class="checkbox mb-3">
           <label>
-            <input type="checkbox" value="remember-me" name="remember"> Stay logged in </label>
+            <input type="checkbox" value="remember-me" name="remember"> {{__('keywords.remember')}}</label>
         </div>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        <p class="mt-5 mb-3 text-muted">© 2020</p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{{__('keywords.login')}}</button>
+        <x-lang-switcher/>
       </form>
     </div>
   </div>

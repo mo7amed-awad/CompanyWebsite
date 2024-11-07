@@ -1,3 +1,6 @@
+@php
+  $dir=LaravelLocalization::getCurrentLocale()=='ar' ? 'rtl':'';
+@endphp
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,24 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Tiny Dashboard - @yield('title')</title>
+    <title>{{__('keywords.dashboard')}} - @yield('title')</title>
     <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/simplebar.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/simplebar.css">
     <!-- Fonts CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Icons CSS -->
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/feather.css">
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/select2.css">
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/dropzone.css">
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/uppy.min.css">
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/jquery.steps.css">
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/jquery.timepicker.css">
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/quill.snow.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/feather.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/select2.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/dropzone.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/uppy.min.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/jquery.steps.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/quill.snow.css">
     <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/daterangepicker.css">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/daterangepicker.css">
     <!-- App CSS -->
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/app-light.css" id="lightTheme">
-    <link rel="stylesheet" href="{{ asset('assetsAdmin') }}/css/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href="{{ asset('assetsAdmin'.$dir) }}/css/app-dark.css" id="darkTheme" disabled>
   </head>
-  <body class="vertical  light  ">
+  <body class="vertical  light  {{$dir}}">
     <div class="wrapper">
