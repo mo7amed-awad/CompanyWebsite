@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -17,6 +18,7 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale().'/admin')->middle
         Route::view('/','admin.index')->name('index');
         Route::resource('services',ServiceController::class);
         Route::resource('features',FeatureController::class);
+        Route::resource('messages',MessageController::class)->only('index','show','destroy');
     });
     require __DIR__.'/auth.php';
 });

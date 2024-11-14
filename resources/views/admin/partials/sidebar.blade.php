@@ -34,6 +34,10 @@
             <x-sidebar-tab href="{{ route('admin.features.index') }}" icon="fe-layers"
                 name="{{ __('keywords.features') }}">
             </x-sidebar-tab>
+            {{-- Messages --}}
+            <x-sidebar-tab href="{{ route('admin.messages.index') }}" icon="fe-message-circle"
+                name="{{ __('keywords.messages') }}">
+            </x-sidebar-tab>
         </ul>
     </nav>
 </aside>
