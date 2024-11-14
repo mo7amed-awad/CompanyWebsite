@@ -3,6 +3,7 @@
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\TestmonialController;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,7 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale().'/admin')->middle
         Route::resource('messages',MessageController::class)->only('index','show','destroy');
         Route::resource('subscribers',SubscriberController::class)->only('index','destroy');
         Route::resource('testmonials',TestmonialController::class);
+        Route::resource('settings',SettingController::class)->only('index','update');
     });
     require __DIR__.'/auth.php';
 });
