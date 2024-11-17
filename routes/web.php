@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SettingController;
@@ -9,11 +10,13 @@ use App\Http\Controllers\TestmonialController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::name('front.')->group(function (){
-    Route::view('/','front.index')->name('index');
-    Route::view('/about','front.about')->name('about');
-    Route::view('/service','front.service')->name('service');
-    Route::view('/contact','front.contact')->name('contact');
+Route::name('front.')->controller(FrontController::class)->group(function (){
+    Route::post('subscriber/store','subscriberStore')->name('subscriber.store');
+    Route::get('/','index')->name('index');
+    Route::get('/about','about')->name('about');
+    Route::get('/service','service')->name('service');
+    Route::get('/contact','contact')->name('contact'); 
+    Route::post('contact/store','contactStore')->name('contact.store');
 });
 
 Route::name('admin.')->prefix(LaravelLocalization::setLocale().'/admin')->middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->group(function (){
